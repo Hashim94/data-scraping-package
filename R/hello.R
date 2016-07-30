@@ -12,6 +12,8 @@
 #   Build and Reload Package:  'Cmd + Shift + B'
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
+# I MADE THIS EDIT
+
 
 hello <- function() {
   print("Hello, world!")
