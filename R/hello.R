@@ -1,6 +1,6 @@
 #' Normalize a table from a data_set
 #'
-#' @param r Length of the semi-major axis.
+#' @param filename The name of the file to be normalized(must be in curr directory)
 #' @param e The eccentricity.
 #' @return The length of the semi-minor axis of the ellipse with specified semi-major axis and eccentricity.
 #' @examples
@@ -15,8 +15,6 @@ normalize <- function (filename,nid=4) {
   if (class(data) != "data.frame") stop("Please input a data frame", call. = FALSE)
   unique_data <- sapply (data, unique)
   count_column <- sapply (unique_data, length)
-  reorder_index <-
-
 
   for (number in count_column) {
     if(number >= 4){
@@ -25,4 +23,8 @@ normalize <- function (filename,nid=4) {
     }
     i <- i +1
   }
+}
+
+create_tables <- function(dataframe,vector){
+
 }

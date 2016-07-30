@@ -1,12 +1,12 @@
 {
-    "contents" : "# Hello, world!\n#\n# This is an example function named 'hello'\n# which prints 'Hello, world!'.\n#\n# You can learn more about package authoring with RStudio at:\n#\n#   http://r-pkgs.had.co.nz/\n#\n# Some useful keyboard shortcuts for package authoring:\n#\n#   Build and Reload Package:  'Cmd + Shift + B'\n#   Check Package:             'Cmd + Shift + E'\n#   Test Package:              'Cmd + Shift + T'\n\nhello <- function() {\n  print(\"Hello, world!\")\n}\n\n",
+    "contents" : "#' Normalize a table from a data_set\n#'\n#' @param filename The name of the file to be normalized(must be in curr directory)\n#' @param e The eccentricity.\n#' @return The length of the semi-minor axis of the ellipse with specified semi-major axis and eccentricity.\n#' @examples\n#' ellipse_perimeter(1, 1)\n#' ellipse_perimeter(1)\n#' @export\n\nclass(data[, \"Race\", drop = FALSE])\n\nnormalize <- function (filename,nid=4) {\n  data <- read_csv(filename)\n  if (class(data) != \"data.frame\") stop(\"Please input a data frame\", call. = FALSE)\n  unique_data <- sapply (data, unique)\n  count_column <- sapply (unique_data, length)\n\n  for (number in count_column) {\n    if(number >= 4){\n     create_table (data[, i, drop = FALSE], data)\n      i <- i + 1\n    }\n    i <- i +1\n  }\n}\n\ncreate_tables <- function(dataframe,vector){\n\n}\n",
     "created" : 1469909061583.000,
-    "dirty" : false,
+    "dirty" : true,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2974640012",
+    "hash" : "4185256479",
     "id" : "61C8F367",
-    "lastKnownWriteTime" : 1469909069,
+    "lastKnownWriteTime" : 1469914671,
     "path" : "~/iXperience/Course/Week1/Project1/dataScrapingProject/R/hello.R",
     "project_path" : "R/hello.R",
     "properties" : {
