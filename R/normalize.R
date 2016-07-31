@@ -9,10 +9,9 @@
 #' @export
 
 
-normalize <- function (filename = "testing_data.csv", nid = 4) {
+normalize <- function (data , nid = 4) {
   # Read the data and store it in a variable
-  data <- read_csv("testing_data.csv")
-  if (class(data) != "data.frame") stop("Please input a data frame", call. = FALSE)
+  # if (class(data) != "tbl_df") stop("Please input a data frame", call. = FALSE)
   if (class(nid) != "numeric") stop("Please input an integer for normalizarion factor", call. = FALSE)
 
   # Make sure data is unique
@@ -31,6 +30,7 @@ normalize <- function (filename = "testing_data.csv", nid = 4) {
   reordered_data <- data[,names]
 
   # create the data-tables
-  create_tables <- function (reordered_data, reordered_vector, nid) {
-  }
+  normalized_table <- create_table (reordered_data, reordered_vector, nid)
+
+  View(normalized_table)
 }

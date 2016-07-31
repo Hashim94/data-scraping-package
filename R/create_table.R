@@ -17,15 +17,18 @@ create_table <- function (dataframe,vector,nid=4) {
     #Get first column of the dataframe
     new_table <- dataframe[,1, drop = FALSE]
     #Create an iD column
-    new_table$column_id <- seq(1:nrow(column_table))
-    filename <- paste(colnames(dataframe)[1],".csv")
+    new_table$column_id <- 1:nrow(new_table)
+    filename <- paste(colnames(new_table)[1],".csv")
     #Write the new table in our cur directory
     write.csv(new_table, file=filename)
+    #Merge new column with original data
+    dataframe <- merge(dataframe, new_table)
     #Delete the column and the entry from the vector
-    dataframe$colnames(dataframe)[1] <- NULL
+    dataframe$colnames(new_table)[1] <- NULL
     vector[[1]] <- NULL
     #Recurse on the function
-    create_table(dataframe,vector)
+    create_table(dataframe ,vector, nid )
   }
+  return(dataframe)
 }
 
