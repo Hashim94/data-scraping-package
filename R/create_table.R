@@ -8,14 +8,15 @@
 #' @export
 
 
-create_table <- function (dataframe, merging_dataframe = dataframe, len_vector,nid=4) {
+create_table <- function (dataframe, len_vector,nid=4, merging_dataframe = dataframe) {
   #Base Case: If the next column is <= nid return
   if(len_vector[1] <= nid){
-    return
-  }
+    return (merging_dataframe)
+    }
   else{
     #Get first column of the dataframe
     new_table <- dataframe[,1, drop = FALSE]
+    new_table <- unique(new_table)
     #Create an iD column
     col_to_delete <-colnames(dataframe)[1]
     new_column_name <- paste(col_to_delete,"id",sep = "_")
@@ -24,15 +25,14 @@ create_table <- function (dataframe, merging_dataframe = dataframe, len_vector,n
     #Write the new table in our cur directory
     write.csv(new_table, file=filename)
     #Merge new column with original data
-    dataframe <- merge(merging_dataframe, new_table)
+    merging_dataframe <- merge(merging_dataframe, new_table)
     #Delete the column and the entry from the vector
     dataframe[col_to_delete] <- NULL
     merging_dataframe[col_to_delete] <- NULL
     len_vector[col_to_delete] <- NULL
-    print(length(len_vector))
     #Recurse on the function
-    create_table(dataframe ,merging_dataframe,len_vector, nid )
-    return(merging_dataframe)
+    returned_Dataframe <- create_table(dataframe ,len_vector, nid, merging_dataframe)
+    return(returned_Dataframe)
   }
 }
 

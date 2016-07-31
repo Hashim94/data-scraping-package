@@ -8,7 +8,6 @@
 #' dataScrapingProject_normalize (data)
 #' @export
 
-
 normalize <- function (data , nid = 4) {
   # Read the data and store it in a variable
   if (class(data)[1] != "tbl_df") stop("Please input a data frame", call. = FALSE)
@@ -30,7 +29,7 @@ normalize <- function (data , nid = 4) {
   reordered_data <- data[,names]
 
   # create the data-tables
-  ordered_vector <- as.list(reordered_vector)
-  normalized_table <- create_table (reordered_data,reordered_data, ordered_vector, nid)
+  reordered_vector <- as.list(reordered_vector)
+  normalized_table <- create_table (reordered_data, reordered_vector, nid)
   View(normalized_table)
 }
