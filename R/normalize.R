@@ -4,14 +4,14 @@
 #' @param nid The number of factors above which to normalize.
 #' @return The normalized data frame.
 #' @examples
-#' dataScrapingProject_normalize ("testing_data.csv", 5)
-#' dataScrapingProject_normalize ("testing_data.csv")
+#' dataScrapingProject_normalize (data, 5)
+#' dataScrapingProject_normalize (data)
 #' @export
 
 
 normalize <- function (data , nid = 4) {
   # Read the data and store it in a variable
-  # if (class(data) != "tbl_df") stop("Please input a data frame", call. = FALSE)
+  if (class(data)[1] != "tbl_df") stop("Please input a data frame", call. = FALSE)
   if (class(nid) != "numeric") stop("Please input an integer for normalizarion factor", call. = FALSE)
 
   # Make sure data is unique

@@ -28,7 +28,7 @@ create_table <- function (dataframe,vector,nid=4) {
     vector[[1]] <- NULL
     #Recurse on the function
     create_table(dataframe ,vector, nid )
+    return(dataframe)
   }
-  return(dataframe)
 }
 
