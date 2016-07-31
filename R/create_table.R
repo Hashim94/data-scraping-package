@@ -1,6 +1,6 @@
 #' Normalize a table from a data_set
 #'
-#' @param dataframe Length of the semi-major axis.
+#' @param dataframe non-normalized dataframe sorted from columns with largest number of factors to smallest
 #' @param vector The vector (sorted non-increasing) that shows uniqueness of each table
 #' @return None, but creates the new normalized tables in the current directory.
 #' @examples

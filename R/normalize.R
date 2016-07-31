@@ -1,11 +1,11 @@
 #' Normalize a table from a data_set
 #'
-#' @param Filename The name of the file to be normalized (must be in curr directory)
-#' @param The number of factors above which to normalize.
+#' @param Filename The name of the file to be normalized (must be in current directory).
+#' @param nid The number of factors above which to normalize.
 #' @return The normalized data frame.
 #' @examples
-#' ellipse_perimeter(1, 1)
-#' ellipse_perimeter(1)
+#' dataScrapingProject_normalize ("testing_data.csv", 5)
+#' dataScrapingProject_normalize ("testing_data.csv")
 #' @export
 
 
@@ -30,15 +30,7 @@ normalize <- function (filename, nid = 4) {
   # reorder the data from column with largest values to smallest
   reordered_data <- data[,names]
 
-  for (number in count_column) {
-    if(number >= 4){
-     create_table (data[, i, drop = FALSE], data)
-      i <- i + 1
-    }
-    i <- i +1
+  # create the data-tables
+  create_tables <- function (reordered_data, reordered_vector, nid) {
   }
-}
-
-create_tables <- function(dataframe,vector){
-
 }
