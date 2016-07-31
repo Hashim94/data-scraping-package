@@ -30,7 +30,7 @@ normalize <- function (data , nid = 4) {
   reordered_data <- data[,names]
 
   # create the data-tables
-  normalized_table <- create_table (reordered_data, reordered_vector, nid)
-
+  ordered_vector <- as.list(reordered_vector)
+  normalized_table <- create_table (reordered_data,reordered_data, ordered_vector, nid)
   View(normalized_table)
 }
