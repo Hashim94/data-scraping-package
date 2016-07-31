@@ -9,7 +9,7 @@
 #' @export
 
 
-normalize <- function (filename, nid = 4) {
+normalize <- function (filename = "testing_data.csv", nid = 4) {
   # Read the data and store it in a variable
   data <- read_csv("testing_data.csv")
   if (class(data) != "data.frame") stop("Please input a data frame", call. = FALSE)

@@ -10,8 +10,7 @@ Description: Take in an unorganized data frame and return a normalized version
     with foreign and local keys
 License: What license is it under?
 LazyData: TRUE
-Imports:
-    
-Suggests:
-    
-RoxygenNote: 5.0.1
+Imports: readr
+Suggests: NA,
+    testthat
+RoxygenNote: NA
