@@ -32,4 +32,6 @@ normalize <- function (data , nid = 4) {
   reordered_vector <- as.list(reordered_vector)
   normalized_table <- create_table (reordered_data, reordered_vector, nid)
   View(normalized_table)
+  write.csv(normalized_table,file="normalized.csv")
+  print("The new data tables have been saved to your directory")
 }
