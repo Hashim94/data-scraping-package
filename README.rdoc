@@ -1,0 +1,16 @@
+R Package: Data Normalization
+
+Install the package in your working directory. The package contains one function in it's API
+
+From an unnormalized table the function takes the dataframe and partitions the dataframe into as many tables it is needed.
+The final normalized table contains foreign keys from the id's that the algorithm create for each new field in every newly created table.
+API:
+	normalize(dataframe,nid=4)
+	
+
+	-dataframe: type data.frame, it should not be empty
+	-nid: By default is 4. The user decides what is the MINIMUM number of unique entries that a column must have for the algorithm to
+		partition that column into another table. The user decides this minimum. 
+
+The newly created tables will appear in the current working directory after running the function and the normalized table will appear as
+normalized.csv
